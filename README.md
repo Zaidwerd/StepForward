@@ -35,9 +35,22 @@ Volunteer has been sent to this application to register for the non-profit’s e
 in the volunteer page will display the assigned QR code and a chat/announce section for communication with the team.
 
 ### Wireframes:
+![login](https://github.com/Zaidwerd/StepForward/blob/master/screenshots/Screen%20Shot%202016-12-06%20at%2011.09.00%20AM.png)
 
+![Admin App](https://github.com/Zaidwerd/StepForward/blob/master/screenshots/Screen%20Shot%202016-12-06%20at%2010.57.05%20AM.png)
+
+![Volunteer App Web](https://github.com/Zaidwerd/StepForward/blob/master/screenshots/Screen%20Shot%202016-12-06%20at%2011.01.46%20AM.png)
+
+![Volunteer App Mobile](https://github.com/Zaidwerd/StepForward/blob/master/screenshots/Screen%20Shot%202016-12-06%20at%2011.58.22%20AM.png)
 
 ### Time Table:
 
+![TimeTable](https://github.com/Zaidwerd/StepForward/blob/master/screenshots/Screen%20Shot%202016-12-06%20at%2012.16.31%20PM.png)
 
 ### Key Challenges: 
+* User Auth
+  Still not comfortable with the idea of tokens and how they are passed and fetched
+* Socket io
+  This is new technology I am unfamiliar with and will take some time to understand and implement
+* Webcam QR scan
+  Getting Webcam QR scan to work properly. Again new tech
