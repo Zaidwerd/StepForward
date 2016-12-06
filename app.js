@@ -22,4 +22,4 @@ app.use(express.static(path.join(__dirname, 'dist')));
 app.use('/admin', adminRouter);
 app.use('/volunteer', volunteerRouter);
 
-app.listen(PORT, () => console.log('Good to Go Captain', PORT))
+app.listen(PORT, () => console.log('Good to Go Sir', PORT))
