@@ -13,7 +13,6 @@ I am looking to create a volunteer check in react application. I have worked for
 * Express.js
 * React.js
 * PSQL
-
 * QR Code Generator - http://goqr.me/api/
 * React QR Reader - https://www.npmjs.com/package/react-qr-reader
 * Socket IO - http://socket.io/
