@@ -8,16 +8,23 @@ const methodOverride = require('method-override');
 const app = express();
 const PORT = process.argv[2] || process.env.PORT || 3000;
 
+const isDev = !('NODE_ENV' in process.env) && require('dotenv').config() && true;
+
 const adminRouter = require('./routes/admin')
 const volunteerRouter = require('./routes/volunteers')
 
-app.use(logger('dev'));
+app.use(logger(isDev ? 'dev' : 'common'));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride('_method'))
 
 app.use(express.static(path.join(__dirname, 'dist')));
+
+app.use((err, req, res, next) => {
+  console.error(err, next);
+  res.status(500).send('Something broke!');
+});
 
 app.use('/admin', adminRouter);
 app.use('/volunteer', volunteerRouter);

@@ -11,7 +11,7 @@ const config = {
   entry:  `${APP_DIR}/index.js`,
   output: {
     path:     BUILD_DIR,
-    filename: '/js/index.js',
+    filename: '/js/[name].js',
   },
   cache:   true,
   debug:   true,
@@ -36,7 +36,7 @@ const config = {
       template:   htmlTemplate,
       appMountId: 'container',
     }),
-    new ExtractTextPlugin('/css/index.css', {
+    new ExtractTextPlugin('/css/[name].css', {
       allChunks: true,
     }),
   ],
@@ -48,25 +48,8 @@ const config = {
       { test: /\.ico$/, loader: 'file-loader?name=/[name].[ext]' },
       { test: /\.jsx?$/, exclude: /node_modules/, loader: "babel", query:
           {
-            presets:['react']
+            presets:['react', 'es2015']
           }
-      },
-
-      {
-        test:   /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'url-loader?limit=100&mimetype=application/font-woff&name=/fonts/[name].[ext]',
-      },
-      {
-        test:   /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'url-loader?limit=100&mimetype=application/octet-stream&name=/fonts/[name].[ext]',
-      },
-      {
-        test:   /\.eot(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'file-loader?name=/fonts/[name].[ext]',
-      },
-      {
-        test:   /\.svg(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'url-loader?limit=100&mimetype=image/svg+xml&name=/fonts/[name].[ext]',
       },
     ],
   },
