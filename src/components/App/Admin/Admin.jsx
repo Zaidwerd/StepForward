@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-// import style from './Login.css';
+// import style from './Admin.css';
 
-export default class Register extends Component {
+export default class Admin extends Component {
 
 render() {
   return (
     <div className= "test">
-        <h1>Register</h1>
+        <h1>Admin</h1>
     </div>
 
     );
