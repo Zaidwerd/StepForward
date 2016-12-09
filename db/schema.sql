@@ -11,7 +11,6 @@ CREATE TABLE admin (
   age INT NOT NULL,
   gender VARCHAR(6) NOT NULL,
   state VARCHAR(2) NOT NULL,
-  image TEXT,
   user_type TEXT,
 );
 
@@ -26,6 +25,6 @@ CREATE TABLE volunteers (
   age INT NOT NULL,
   gender VARCHAR(6) NOT NULL,
   state VARCHAR(2) NOT NULL,
-  image TEXT,
+  qr TEXT,
   user_type TEXT,
 );

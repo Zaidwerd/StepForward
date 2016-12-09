@@ -3,10 +3,47 @@
   color: white;
 }
 
-.admin{
-  display: none;
+#admin-login{
+  height: auto;
+  width: 45%;
+  display: inline-block;
+  float: left;
+  margin: 2%;
+  z-index: 1;
 }
 
-.volunteer{
-  display: none;
+#volunteer-login{
+  height: auto;
+  width: 45%;
+  display: inline-block;
+  float: left;
+  margin: 2%;
+  z-index: 1;
 }
+
+#admin-register{
+  display: none;
+  z-index: 2;
+  background-color: red;
+  width: 50%;
+  text-align: center;
+  margin: 0 25%;
+}
+
+#volunteer-register{
+  display: none;
+  z-index: 2;
+  background-color: red;
+}
+
+#admin{
+  display: none;
+  z-index: 3;
+}
+
+#volunteer{
+  display: none;
+  z-index: 3;
+}
+
+
