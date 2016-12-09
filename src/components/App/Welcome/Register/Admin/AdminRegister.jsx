@@ -104,6 +104,7 @@ render() {
     <div>
         <div className='hOne'>
             <h1>SIGN UP</h1>
+            <button onClick={this.props.HideModal}>X</button>
         </div>
 
         <div className="signup-inputContainer">
@@ -172,8 +173,7 @@ render() {
           />
           <br/>
 
-          <a href='/#/login'><button onClick={() => this.handleAdminFormSubmit()}>Sign Up</button></a>
-
+          <button onClick={() => this.handleAdminFormSubmit()}>Sign Up</button>
 
         </div>
     </div>

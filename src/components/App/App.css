@@ -34,6 +34,9 @@
   display: none;
   z-index: 2;
   background-color: red;
+  width: 50%;
+  text-align: center;
+  margin: 0 25%;
 }
 
 #admin{

@@ -65,8 +65,8 @@ function listVolunteers(req, res, next) {
 
 module.exports = {
   createVolunteer,
-  deleteVolunteer,
-  editVolunteer,
+  // deleteVolunteer,
+  // editVolunteer,
   listVolunteers,
   // getUserById,
   // getAdminStats,

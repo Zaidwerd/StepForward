@@ -13,6 +13,7 @@ export default class App extends Component {
     super();
 
     this.state = {
+      admin_id: '',
       admin_username: '',
       admin_password: '',
       admin_first_name: '',
@@ -22,6 +23,7 @@ export default class App extends Component {
       admin_gender: '',
       admin_state: '',
       admin_user_type: '',
+      volunteer_id: '',
       volunteer_username: '',
       volunteer_password: '',
       volunteer_first_name: '',
@@ -49,6 +51,26 @@ export default class App extends Component {
     document.querySelector('#volunteer-login').style.display = "none";
   }
 
+  adminRegisterHideModal(e){
+    // console.log("here")
+    document.querySelector('#admin-register').style.display = "none";
+    document.querySelector('#admin-login').style.display = "block";
+    document.querySelector('#volunteer-login').style.display = "block";
+  }
+
+  volunteerRegisterShowModal(e){
+    // console.log("here")
+    document.querySelector('#volunteer-register').style.display = "block";
+    document.querySelector('#admin-login').style.display = "none";
+    document.querySelector('#volunteer-login').style.display = "none";
+  }
+
+  volunteerRegisterHideModal(e){
+    // console.log("here")
+    document.querySelector('#volunteer-register').style.display = "none";
+    document.querySelector('#admin-login').style.display = "block";
+    document.querySelector('#volunteer-login').style.display = "block";
+  }
 
 render() {
   return (
@@ -58,20 +80,28 @@ render() {
 
         <div id = "admin-login">
           <AdminLogin
-          ShowModal= {event => this.adminRegisterShowModal(event)}
+            ShowModal= {event => this.adminRegisterShowModal(event)}
           />
         </div>
 
         <div id = "volunteer-login">
-          <VolunteerLogin />
+          <VolunteerLogin
+            ShowModal= {event => this.volunteerRegisterShowModal(event)}
+          />
+
         </div>
 
         <div id = "admin-register">
-          <AdminRegister />
+          <AdminRegister
+            HideModal= {event => this.adminRegisterHideModal(event)}
+          />
+
         </div>
 
         <div id = "volunteer-register">
-          <AdminRegister />
+          <VolunteerRegister
+            HideModal= {event => this.volunteerRegisterHideModal(event)}
+          />
         </div>
 
       </div>

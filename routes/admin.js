@@ -4,16 +4,16 @@ const express      = require('express');
 const { createAdmin, getAdminByUsername, listAdmin }    = require('../models/admin.js');
 // const { authenticate }   = require('../lib/auth');
 
-const AdminRouter  = express.Router();
+const adminRouter  = express.Router();
 
-AdminRouter.get('/', listAdmin, (req, res) => {
+adminRouter.get('/', listAdmin, (req, res) => {
   res.json(res.users.map((user) => {
     const { id, username, password } = user;
     return { id, username, password };
   }));
 });
 
-AdminRouter.post('/', createAdmin, (req, res) => {
+adminRouter.post('/', createAdmin, (req, res) => {
   res.redirect('/');
 });
 
