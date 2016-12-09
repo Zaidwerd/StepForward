@@ -6,6 +6,43 @@ import Admin from './Admin/Admin.jsx'
 import Volunteer from './Volunteer/Volunteer.jsx'
 
 export default class App extends Component {
+  constructor(props) {
+    super();
+
+    this.state = {
+    admin: {
+      username: '',
+      password: '',
+      first_name: '',
+      last_name: '',
+      age: '',
+      email: '',
+      gender: '',
+      state: '',
+      user_type: '',
+      image: '',
+    },
+    volunteer: {
+      username: '',
+      password: '',
+      first_name: '',
+      last_name: '',
+      age: '',
+      email: '',
+      gender: '',
+      state: '',
+      user_type: '',
+      image: '',
+    },
+    login: {
+      username: '',
+      password: '',
+      loggedIn: false,
+      user_type: '',
+    },
+    currentUser: null,
+    }
+  }
 
 render() {
   return (

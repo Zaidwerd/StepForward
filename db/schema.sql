@@ -12,7 +12,7 @@ CREATE TABLE admin (
   gender VARCHAR(6) NOT NULL,
   state VARCHAR(2) NOT NULL,
   image TEXT,
-  admin BOOLEAN DEFAULT true,
+  user_type TEXT,
 );
 
 
@@ -27,5 +27,5 @@ CREATE TABLE volunteers (
   gender VARCHAR(6) NOT NULL,
   state VARCHAR(2) NOT NULL,
   image TEXT,
-  volunteer BOOLEAN DEFAULT true,
+  user_type TEXT,
 );

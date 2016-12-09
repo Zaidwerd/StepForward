@@ -2,7 +2,8 @@ const db = require('../lib/dbConnect');
 
 function createAdmin(req, res, next) {
   console.log('entering data into admin');
-  db.none(`INSERT INTO admin (username, email, first_name, last_name, age, gender, zodiac, state, password, image) Values ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)`, [req.body.username, req.body.email, req.body.first_name, req.body.last_name, req.body.age, req.body.gender, req.body.zodiac, req.body.state, req.body.password, req.body.image])
+  db.none(`INSERT INTO admin (username, email, first_name, last_name, age, gender, state, password, image, user_type) Values ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)`,
+    [req.body.username, req.body.email, req.body.first_name, req.body.last_name, req.body.age, req.body.gender, req.body.state, req.body.password, req.body.image, req.body.user_type])
   // db.one(
   //   `INSERT INTO users (username, email, first_name, last_name, age, gender, zodiac, state, password) Values ($/username/, $/email/, $/first_name/, $/last_name/, $/age/, $/gender/, $/zodiac/, $/state/, bcrypt.hashSync(req.body.user.password, SALTROUNDS));`
   // )
