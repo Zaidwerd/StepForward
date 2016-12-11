@@ -2,12 +2,6 @@ import React, { Component } from 'react';
 // import style from './Login.css';
 
 export default class AdminLogin extends Component {
-   constructor(props) {
-    super();
-
-    this.state = {
-    }
-  }
 
 render() {
   return (
@@ -22,20 +16,20 @@ render() {
             <input className='user'
             type="text"
             placeholder="Username"
-            value={this.props.state.login.username}
-            onChange={this.props.updateUsername}
+            value={this.props.adminUsername}
+            onChange={this.props.updateAdminUsername}
             />
 
             <input className='pass'
             type="text"
             placeholder="Password"
-            value={this.props.state.login.password}
-            onChange={this.props.updatePassword}
+            value={this.props.adminPassword}
+            onChange={this.props.updateAdminPassword}
             />
 
 
             <br/>
-            <button onClick={this.props.simpleAuth}> Log In </button>
+            <button onClick={this.props.simpleAdminAuth}> Log In </button>
 
             <br/>
 

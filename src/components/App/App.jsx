@@ -34,15 +34,143 @@ export default class App extends Component {
       volunteer_state: '',
       volunteer_user_type: '',
       volunteer_qr: '',
-    login: {
+    admin_login: {
       username: '',
       password: '',
       loggedIn: false,
-      user_type: '',
+    },
+    volunteer_login: {
+      username: '',
+      password: '',
+      loggedIn: false,
     },
     currentUser: null,
     }
   }
+
+  // ADMIN LOGIN
+
+  adminLogIn(a) {
+    console.log(a);
+    this.setState({
+      currentUser: a.id,
+      admin_login: {
+        username: a.username,
+        password: a.password,
+        loggedIn: true,
+      },
+    });
+    // document.querySelector('#modal2').style.display = 'block';
+  }
+
+  // grabs the password from the login form
+  updateAdminPassword(e) {
+    this.setState({
+      admin_login: {
+        username: this.state.admin_login.username,
+        password: e.target.value,
+        loggedIn: false,
+      }
+    });
+  }
+  // grabs the username from the login form
+  updateAdminUsername(e) {
+    this.setState({
+       admin_login: {
+        username: e.target.value,
+        password: this.state.admin_login.password,
+        loggedIn: false,
+      }
+    });
+  }
+
+  // user authorization
+  simpleAdminAuth() {
+    console.log("got here")
+    fetch('/auth/admin', {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      method: 'POST',
+      body: JSON.stringify({
+        username: this.state.admin_login.username,
+        password: this.state.admin_login.password,
+      }),
+    })
+    .then(r => r.json())
+    .then(this.setState({
+      admin_login: {
+        username: '',
+        password: '',
+        loggedIn: false,
+      }
+    }))
+    .then(this.adminLogIn.bind(this))
+    .catch(err => console.log(err));
+  }
+
+  // VOLUNTEER LOGIN
+
+  volunteerLogIn(a) {
+    console.log(a);
+    this.setState({
+      currentUser: a.id,
+      volunteer_login: {
+        username: a.username,
+        password: a.password,
+        loggedIn: true,
+      },
+    });
+    // document.querySelector('#modal2').style.display = 'block';
+  }
+
+  // grabs the password from the login form
+  updateVolunteerPassword(e) {
+    this.setState({
+      volunteer_login: {
+        username: this.state.volunteer_login.username,
+        password: e.target.value,
+        loggedIn: false,
+      }
+    });
+  }
+  // grabs the username from the login form
+  updateVolunteerUsername(e) {
+    this.setState({
+       volunteer_login: {
+        username: e.target.value,
+        password: this.state.volunteer_login.password,
+        loggedIn: false,
+      }
+    });
+  }
+
+  // user authorization
+  simpleVolunteerAuth() {
+    console.log("got here")
+    fetch('/auth/volunteer', {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      method: 'POST',
+      body: JSON.stringify({
+        username: this.state.volunteer_login.username,
+        password: this.state.volunteer_login.password,
+      }),
+    })
+    .then(r => r.json())
+    .then(this.setState({
+      volunteer_login: {
+        username: '',
+        password: '',
+        loggedIn: false,
+      }
+    }))
+    .then(this.volunteerLogIn.bind(this))
+    .catch(err => console.log(err));
+  }
+
+
 
   adminRegisterShowModal(e){
     // console.log("here")
@@ -80,12 +208,24 @@ render() {
 
         <div id = "admin-login">
           <AdminLogin
+            adminUsername= {this.state.admin_login.username}
+            adminPassword= {this.state.admin_login.password}
+            adminLogIn= {event => this.adminLogIn(event)}
+            updateAdminPassword= {event => this.updateAdminPassword(event)}
+            updateAdminUsername= {event => this.updateAdminUsername(event)}
+            simpleAdminAuth= {() => this.simpleAdminAuth()}
             ShowModal= {event => this.adminRegisterShowModal(event)}
           />
         </div>
 
         <div id = "volunteer-login">
           <VolunteerLogin
+            volunteerUsername= {this.state.volunteer_login.username}
+            volunteerPassword= {this.state.volunteer_login.password}
+            volunteerLogIn= {event => this.volunteerLogIn(event)}
+            updateVolunteerPassword= {event => this.updateVolunteerPassword(event)}
+            updateVolunteerUsername= {event => this.updateVolunteerUsername(event)}
+            simpleVolunteerAuth= {event => this.simpleVolunteerAuth(event)}
             ShowModal= {event => this.volunteerRegisterShowModal(event)}
           />
 

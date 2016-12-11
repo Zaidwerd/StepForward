@@ -10,8 +10,10 @@ const PORT = process.argv[2] || process.env.PORT || 3000;
 
 const isDev = !('NODE_ENV' in process.env) && require('dotenv').config() && true;
 
-const adminRouter = require('./routes/admin')
-const volunteerRouter = require('./routes/volunteers')
+const adminRouter = require('./routes/admin');
+const volunteerRouter = require('./routes/volunteers');
+const adminAuthRouter = require('./routes/adminauth');
+const volunteerAuthRouter = require('./routes/volunteerAuth');
 
 app.use(logger(isDev ? 'dev' : 'common'));
 
@@ -28,5 +30,8 @@ app.use((err, req, res, next) => {
 
 app.use('/admin', adminRouter);
 app.use('/volunteer', volunteerRouter);
+app.use('/auth/admin', adminAuthRouter);
+app.use('/auth/volunteer', volunteerAuthRouter);
+
 
 app.listen(PORT, () => console.log('Good to Go Sir', PORT))

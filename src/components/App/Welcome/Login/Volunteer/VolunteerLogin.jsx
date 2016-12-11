@@ -22,20 +22,20 @@ render() {
             <input className='user'
             type="text"
             placeholder="Username"
-            value={this.props.state.login.username}
-            onChange={this.props.updateUsername}
+            value={this.props.volunteerUsername}
+            onChange={this.props.updateVolunteerUsername}
             />
 
             <input className='pass'
             type="text"
             placeholder="Password"
-            value={this.props.state.login.password}
-            onChange={this.props.updatePassword}
+            value={this.props.volunteerPassword}
+            onChange={this.props.updateVolunteerPassword}
             />
 
 
             <br/>
-            <button onClick={this.props.simpleAuth}> Log In </button>
+            <button onClick={this.props.simpleVolunteerAuth}> Log In </button>
 
             <br/>
 
