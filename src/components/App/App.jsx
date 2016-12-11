@@ -60,7 +60,9 @@ export default class App extends Component {
         loggedIn: true,
       },
     });
-    // document.querySelector('#modal2').style.display = 'block';
+    document.querySelector('#admin').style.display = "block";
+    document.querySelector('#admin-login').style.display = "none";
+    document.querySelector('#volunteer-login').style.display = "none";
   }
 
   // grabs the password from the login form
@@ -121,7 +123,9 @@ export default class App extends Component {
         loggedIn: true,
       },
     });
-    // document.querySelector('#modal2').style.display = 'block';
+    document.querySelector('#volunteer').style.display = "block";
+    document.querySelector('#admin-login').style.display = "none";
+    document.querySelector('#volunteer-login').style.display = "none";
   }
 
   // grabs the password from the login form
