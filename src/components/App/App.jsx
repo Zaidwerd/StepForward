@@ -5,7 +5,7 @@ import AdminRegister from './Welcome/Register/Admin/AdminRegister.jsx'
 import VolunteerRegister from './Welcome/Register/Volunteer/VolunteerRegister.jsx'
 import Admin from './Admin/Admin.jsx'
 import Volunteer from './Volunteer/Volunteer.jsx'
-import './../../normalize.css';
+// import './../../normalize.css';
 import style from './App.css';
 
 export default class App extends Component {

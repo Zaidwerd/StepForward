@@ -4,6 +4,7 @@
   background-color: blue;
   display: inline-block;
   text-align: center;
+  float: left;
 }
 
 #volunteer-chat{
@@ -12,4 +13,5 @@
   background-color: purple;
   display: inline-block;
   text-align: center;
+  float: left;
 }

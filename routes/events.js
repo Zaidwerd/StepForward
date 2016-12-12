@@ -1,23 +1,23 @@
 /* eslint no-multi-spaces: ["error", { exceptions: { "VariableDeclarator": true } }] */
 
 const express      = require('express');
-const { createAdmin, getAdminByUsername, listAdmin, deleteAdmin }    = require('../models/admin.js');
+const { createEvent, listEvents, deleteEvent}    = require('../models/events.js');
 // const { authenticate }   = require('../lib/auth');
 
-const adminRouter  = express.Router();
+const eventsRouter  = express.Router();
 
-adminRouter.get('/', listAdmin, (req, res) => {
+eventsRouter.get('/', listEvents, (req, res) => {
   res.json(res.users.map((user) => {
     const { id, username, password } = user;
     return { id, username, password };
   }));
 });
 
-adminRouter.post('/', createAdmin, (req, res) => {
+eventsRouter.post('/', createEvent, (req, res) => {
   res.redirect('/');
 });
 
-adminRouter.delete('/:id', deleteAdmin,  (req, res) => {
+eventsRouter.delete('/:id', deleteEvent,  (req, res) => {
   res.json(res.results);
 });
 
@@ -29,4 +29,4 @@ adminRouter.delete('/:id', deleteAdmin,  (req, res) => {
 //   res.json(res.user);
 // });
 
-module.exports = adminRouter;
+module.exports = eventsRouter;

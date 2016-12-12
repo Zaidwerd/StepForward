@@ -6,9 +6,6 @@ export default class Volunteer extends Component {
 render() {
   return (
     <div className= "test">
-
-      <h1>Volunteer</h1>
-
     <div id= "volunteer-data">
       <h1>Data</h1>
         <h2>{this.props.volunteerUsername}</h2>
