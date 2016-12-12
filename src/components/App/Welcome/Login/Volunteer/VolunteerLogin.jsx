@@ -15,7 +15,7 @@ render() {
         <div className='userBox'>
 
           <div className='hOne'>
-            <h1>VOLUNTEER LOGIN</h1>
+            <h1 className='header-title'>VOLUNTEER LOGIN</h1>
           </div>
           <br/>
           <div className='inputContainer'>
@@ -25,6 +25,8 @@ render() {
             value={this.props.volunteerUsername}
             onChange={this.props.updateVolunteerUsername}
             />
+            <br/>
+            <br/>
 
             <input className='pass'
             type="text"
@@ -34,6 +36,7 @@ render() {
             />
 
 
+            <br/>
             <br/>
             <button onClick={this.props.simpleVolunteerAuth}> Log In </button>
 

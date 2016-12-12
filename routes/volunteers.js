@@ -8,8 +8,8 @@ const volunteerRouter  = express.Router();
 
 volunteerRouter.get('/', listVolunteers, (req, res) => {
   res.json(res.users.map((user) => {
-    const { id, username, password } = user;
-    return { id, username, password };
+    const { id, username, password, qr } = user;
+    return { id, username, password, qr };
   }));
 });
 

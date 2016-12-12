@@ -1,0 +1,13 @@
+#volunteer-data{
+  height: 100%;
+  width: 40%;
+  background-color: blue;
+  display: inline-block;
+}
+
+#volunteer-chat{
+  height: 100%;
+  width: 60%;
+  background-color: purple;
+  display: inline-block;
+}

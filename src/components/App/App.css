@@ -3,6 +3,18 @@
   color: white;
 }
 
+header{
+  background-color: grey;
+  color: black;
+  height: 20%;
+  width: 100%;
+}
+
+.header-title{
+  height: 15%;
+  margin: 0;
+}
+
 #admin-login{
   height: auto;
   width: 45%;
@@ -10,6 +22,7 @@
   float: left;
   margin: 2%;
   z-index: 1;
+  text-align: center;
 }
 
 #volunteer-login{
@@ -19,6 +32,7 @@
   float: left;
   margin: 2%;
   z-index: 1;
+  text-align: center;
 }
 
 #admin-register{

@@ -9,7 +9,7 @@ render() {
         <div className='userBox'>
 
           <div className='hOne'>
-            <h1>ADMIN LOG IN</h1>
+            <h1 className='header-title'>ADMIN LOG IN</h1>
           </div>
           <br/>
           <div className='inputContainer'>
@@ -20,6 +20,9 @@ render() {
             onChange={this.props.updateAdminUsername}
             />
 
+            <br/>
+            <br/>
+
             <input className='pass'
             type="text"
             placeholder="Password"
@@ -28,6 +31,7 @@ render() {
             />
 
 
+            <br/>
             <br/>
             <button onClick={this.props.simpleAdminAuth}> Log In </button>
 

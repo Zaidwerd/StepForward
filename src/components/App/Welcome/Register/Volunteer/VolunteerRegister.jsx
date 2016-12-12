@@ -15,6 +15,7 @@ constructor(props) {
       form_volunteer_gender: '',
       form_volunteer_state: '',
       form_volunteer_user_type: '',
+      form_volunteer_qr: '',
   }
 }
 
@@ -23,6 +24,7 @@ constructor(props) {
   updateVolunteerUsername(e) {
     this.setState({
       form_volunteer_username: e.target.value,
+      form_volunteer_qr: 'https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=' + e.target.value,
     });
   }
 
@@ -68,6 +70,7 @@ constructor(props) {
     });
   }
 
+
   // submits the registration form
   handleVolunteerFormSubmit() {
     fetch('/volunteer', {
@@ -84,6 +87,7 @@ constructor(props) {
         gender: this.state.form_volunteer_gender,
         state: this.state.form_volunteer_state,
         email: this.state.form_volunteer_email,
+        qr: this.state.form_volunteer_qr,
       })
     })
     .then(this.setState({
@@ -95,6 +99,7 @@ constructor(props) {
       form_volunteer_gender: '',
       form_volunteer_state: '',
       form_volunteer_email: '',
+      form_volunteer_qr: '',
     }))
     .catch(err => console.log(err));
   }

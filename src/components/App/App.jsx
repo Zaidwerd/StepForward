@@ -122,6 +122,17 @@ export default class App extends Component {
         password: a.password,
         loggedIn: true,
       },
+      volunteer_id: a.id,
+      volunteer_username: a.username,
+      volunteer_password: a.password,
+      volunteer_first_name: a.first_name,
+      volunteer_last_name: a.last_name,
+      volunteer_age: a.age,
+      volunteer_email: a.email,
+      volunteer_gender: a.gender,
+      volunteer_state: a.state,
+      volunteer_user_type: a.user_type,
+      volunteer_qr: a.qr,
     });
     document.querySelector('#volunteer').style.display = "block";
     document.querySelector('#admin-login').style.display = "none";
@@ -208,7 +219,9 @@ render() {
   return (
     <container className= "test">
       <div>
-        <h1>HELLO</h1>
+        <header>
+          <h1 className="header-title">Step Forward</h1>
+        </header>
 
         <div id = "admin-login">
           <AdminLogin
@@ -255,7 +268,11 @@ render() {
       </div>
 
       <div id = "volunteer">
-        <Volunteer />
+        <Volunteer
+          volunteerUsername= {this.state.volunteer_username}
+          volunteerQR= {this.state.volunteer_qr}
+        />
+
       </div>
 
     </container>
