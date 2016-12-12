@@ -3,6 +3,7 @@
   width: 40%;
   background-color: blue;
   display: inline-block;
+  text-align: center;
 }
 
 #volunteer-chat{
@@ -10,4 +11,5 @@
   width: 60%;
   background-color: purple;
   display: inline-block;
+  text-align: center;
 }

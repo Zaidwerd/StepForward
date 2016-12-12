@@ -59,6 +59,16 @@ export default class App extends Component {
         password: a.password,
         loggedIn: true,
       },
+      admin_id: a.id,
+      admin_username: a.username,
+      admin_password: a.password,
+      admin_first_name: a.first_name,
+      admin_last_name: a.last_name,
+      admin_age: a.age,
+      admin_email: a.email,
+      admin_gender: a.gender,
+      admin_state: a.state,
+      admin_user_type: a.user_type,
     });
     document.querySelector('#admin').style.display = "block";
     document.querySelector('#admin-login').style.display = "none";

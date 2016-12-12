@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 // import style from './Admin.css';
+// import QR from './QR.jsx';
 
 export default class Admin extends Component {
 

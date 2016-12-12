@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import style from './Volunteer.css';
-import Chat from './Chat.jsx'
 
 export default class Volunteer extends Component {
 
@@ -17,7 +16,7 @@ render() {
     </div>
 
     <div id= "volunteer-chat">
-      <Chat />
+      <h1>Announcements</h1>
     </div>
 
     </div>
