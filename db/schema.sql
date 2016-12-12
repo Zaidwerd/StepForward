@@ -1,5 +1,6 @@
 DROP TABLE IF EXISTS admin;
 DROP TABLE IF EXISTS volunteers;
+DROP TABLE IF EXISTS events;
 
 CREATE TABLE admin (
   id SERIAL PRIMARY KEY,
@@ -28,3 +29,11 @@ CREATE TABLE volunteers (
   qr TEXT,
   user_type TEXT
 );
+
+CREATE TABLE events (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(32) NOT NULL,
+  event_date DATE NOT NULL,
+  contact INT FOREIGN KEY,
+  volunteers INT FOREIGN KEY
+)
