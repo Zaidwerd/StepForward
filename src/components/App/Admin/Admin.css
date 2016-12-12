@@ -1,0 +1,23 @@
+#admin-list{
+  display: inline-block;
+  height: 100%;
+  width: 40%;
+  background-color: blue;
+  float: left;
+}
+
+#admin-qr{
+  display: none;
+  height: 150%;
+  width: 60%;
+  background-color: purple;
+  float: left;
+}
+
+#admin-chat{
+  display: inline-block;
+  height: 150%;
+  width: 60%;
+  background-color: black;
+  float: left;
+}

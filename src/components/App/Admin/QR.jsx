@@ -5,27 +5,27 @@ const getDeviceId = require('./getDeviceId')
 import 'md-gum-polyfill'
 import 'webrtc-adapter'
 
-export default class Reader extends Component {
-  static propTypes = {
-    handleScan: PropTypes.func.isRequired,
-    handleError: PropTypes.func.isRequired,
-    handleImageNotRecognized: PropTypes.func,
-    interval: PropTypes.oneOfType([
-      PropTypes.number,
-      PropTypes.bool,
-    ]),
-    previewStyle: PropTypes.object,
-    inputStyle: PropTypes.object,
-    facingMode: PropTypes.string,
-    legacyMode: PropTypes.bool,
-    maxImageSize: PropTypes.number,
-  }
-  static defaultProps = {
-    interval: 500,
-    previewStyle: {},
-    inputStyle: {},
-    maxImageSize: 1500,
-  }
+export default class QR extends Component {
+  // static PropTypes = {
+  //   handleScan: PropTypes.func.isRequired,
+  //   handleError: PropTypes.func.isRequired,
+  //   handleImageNotRecognized: PropTypes.func,
+  //   interval: PropTypes.oneOfType([
+  //     PropTypes.number,
+  //     PropTypes.bool,
+  //   ]),
+  //   previewStyle: PropTypes.object,
+  //   inputStyle: PropTypes.object,
+  //   facingMode: PropTypes.string,
+  //   legacyMode: PropTypes.bool,
+  //   maxImageSize: PropTypes.number,
+  // }
+  // static defaultProps = {
+  //   interval: 500,
+  //   previewStyle: {},
+  //   inputStyle: {},
+  //   maxImageSize: 1500,
+  // }
 
   constructor(props){
     super(props)
@@ -87,8 +87,8 @@ export default class Reader extends Component {
         video: {
           deviceId,
           facingMode: facingMode == 'rear' ? 'environment' : 'user',
-          width: { min: 360, ideal: 1280, max: 1920 },
-          height: { min: 240, ideal: 720, max: 1080 },
+          width: { min: 360, ideal: 560, max: 660 },
+          height: { min: 240, ideal: 340, max: 440 },
         },
       })
     })
@@ -181,22 +181,21 @@ export default class Reader extends Component {
     const previewStyle = {
       display: 'block',
       objectFit: 'contain',
-      ...this.props.previewStyle,
     }
     const canvasStyle = {
       display: 'none',
     }
     const inputStyle = {
       display: 'none',
-      ...this.props.inputStyle,
     }
 
     return (
       <section>
+        <button onClick={this.props.hideQR}>X</button>
         {this.props.legacyMode ? (
           <div>
             <input style={inputStyle} id="react-qr-reader-input" type="file" accept="image/*" ref="input" onChange={this.handleInputChange}/>
-            <img style={{...previewStyle, display: 'none'}} ref="img"/>
+            <img style={{previewStyle, display: 'none'}} ref="img"/>
           </div>
         ) : (
           <video style={previewStyle} ref="preview"/>
