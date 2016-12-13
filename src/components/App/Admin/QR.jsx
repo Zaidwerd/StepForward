@@ -1,9 +1,9 @@
-import React, { Component, PropTypes } from 'react'
-import jsQR from 'jsqr'
-const getDeviceId = require('./getDeviceId')
+import React, { Component, PropTypes } from 'react';
+import jsQR from 'jsqr';
+import 'md-gum-polyfill';
+import 'webrtc-adapter';
 
-import 'md-gum-polyfill'
-import 'webrtc-adapter'
+const getDeviceId = require('./getDeviceId');
 
 export default class QR extends Component {
   // static PropTypes = {
