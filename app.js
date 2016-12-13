@@ -8,6 +8,22 @@ const methodOverride = require('method-override');
 const app = express();
 const PORT = process.argv[2] || process.env.PORT || 3000;
 
+// SOCKET IO
+const http = require('http').Server(app);
+const io = require('socket.io')(http);
+
+io.on('connection', socket => {
+  console.log('a user connected');
+  socket.on('server-chat', msg => {
+    console.log('chat: ' + msg);
+    socket.broadcast.emit('chatroom', {msg : msg});
+  });
+
+  socket.on('disconnect', () => console.log('user disconnected'));
+});
+
+http.listen(PORT, () => console.log('listen on', PORT));
+
 const isDev = !('NODE_ENV' in process.env) && require('dotenv').config() && true;
 
 const adminRouter = require('./routes/admin');
@@ -36,5 +52,4 @@ app.use('/auth/volunteer', volunteerAuthRouter);
 app.use('/events', eventsRouter);
 
 
-
-app.listen(PORT, () => console.log('Good to Go Sir', PORT))
+// app.listen(PORT, () => console.log('Good to Go Sir', PORT))

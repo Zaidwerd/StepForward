@@ -35,6 +35,9 @@ const config = {
       inject:     false,
       template:   htmlTemplate,
       appMountId: 'container',
+      scripts: [
+        "/socket.io/socket.io.js",
+      ],
     }),
     new ExtractTextPlugin('/css/[name].css', {
       allChunks: true,

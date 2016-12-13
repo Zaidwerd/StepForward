@@ -9,6 +9,7 @@ CREATE TABLE admin (
   last_name VARCHAR(30) NOT NULL,
   password VARCHAR(30) NOT NULL,
   email TEXT NOT NULL,
+  phone VARCHAR(10) NOT NULL,
   age INT NOT NULL,
   gender VARCHAR(6) NOT NULL,
   state VARCHAR(2) NOT NULL,
@@ -23,6 +24,7 @@ CREATE TABLE volunteers (
   last_name VARCHAR(30) NOT NULL,
   password VARCHAR(30) NOT NULL,
   email TEXT NOT NULL,
+  phone VARCHAR(10) NOT NULL,
   age INT NOT NULL,
   gender VARCHAR(6) NOT NULL,
   state VARCHAR(2) NOT NULL,
@@ -34,6 +36,6 @@ CREATE TABLE events (
   id SERIAL PRIMARY KEY,
   name VARCHAR(32) NOT NULL,
   event_date DATE NOT NULL,
-  contact INT FOREIGN KEY,
-  volunteers INT FOREIGN KEY
+  contact INT,
+  volunteers INT
 )
