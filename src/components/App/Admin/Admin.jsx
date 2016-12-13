@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import style from './Admin.css';
-import QR from './QR.jsx';
-import Search from './Search.jsx';
-import AdminChat from '../Socket/AdminChat.jsx'
+import QR from './QR/QR.jsx';
+import Search from './Search/Search.jsx';
+import AdminChat from '../Socket/Admin/AdminChat.jsx'
 
 export default class Admin extends Component {
 

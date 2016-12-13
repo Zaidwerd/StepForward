@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import VolunteerChat from '../Socket/VolunteerChat.jsx';
+import VolunteerChat from '../Socket/Volunteer/VolunteerChat.jsx';
 import './Volunteer.css';
 
 export default class Volunteer extends Component {

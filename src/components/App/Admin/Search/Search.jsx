@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Admin.css';
+import '../Admin.css';
 
 export default class List extends Component {
   constructor() {
