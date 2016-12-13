@@ -24,7 +24,7 @@ render() {
             <br/>
 
             <input className='pass'
-            type="text"
+            type="password"
             placeholder="Password"
             value={this.props.adminPassword}
             onChange={this.props.updateAdminPassword}

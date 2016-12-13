@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 // import style from './Login.css';
 
 export default class VolunteerRegister extends Component {
-constructor(props) {
+  constructor(props) {
     super();
 
     this.state = {
@@ -12,12 +12,13 @@ constructor(props) {
       form_volunteer_last_name: '',
       form_volunteer_age: '',
       form_volunteer_email: '',
+      form_volunteer_phone: '',
       form_volunteer_gender: '',
       form_volunteer_state: '',
       form_volunteer_user_type: '',
       form_volunteer_qr: '',
+    };
   }
-}
 
 //eVolunteer SIGN UP PAGE
 
@@ -70,6 +71,12 @@ constructor(props) {
     });
   }
 
+  updateVolunteerPhone(e) {
+    this.setState({
+      form_volunteer_phone: e.target.value,
+    });
+  }
+
 
   // submits the registration form
   handleVolunteerFormSubmit() {
@@ -87,6 +94,7 @@ constructor(props) {
         gender: this.state.form_volunteer_gender,
         state: this.state.form_volunteer_state,
         email: this.state.form_volunteer_email,
+        phone: this.state.form_volunteer_phone,
         qr: this.state.form_volunteer_qr,
       })
     })
@@ -99,6 +107,7 @@ constructor(props) {
       form_volunteer_gender: '',
       form_volunteer_state: '',
       form_volunteer_email: '',
+      form_volunteer_phone: '',
       form_volunteer_qr: '',
     }))
     .catch(err => console.log(err));
@@ -107,82 +116,90 @@ constructor(props) {
 render() {
   return (
     <div>
-        <div className='hOne'>
-            <h1>SIGN UP</h1>
-            <button onClick={this.props.HideModal}>X</button>
-        </div>
+      <div className='hOne'>
+        <h1>SIGN UP</h1>
+        <button onClick={this.props.HideModal}>X</button>
+      </div>
 
-        <div className="signup-inputContainer">
-          <input
-            className="user"
-            type="text"
-            placeholder="Create Username"
-            value={this.state.form_volunteer_username}
-            onChange={event => this.updateVolunteerUsername(event)}
-          />
-          <br/>
-          <input
-            className="pass"
-            type="text"
-            placeholder="Create Password"
-            value={this.state.form_volunteer_password}
-            onChange={event => this.updateVolunteerPassword(event)}
-          />
-          <br/>
-          <input
-            className="first"
-            type="text"
-            placeholder="First Name"
-            value={this.state.form_volunteer_first_name}
-            onChange={event => this.updateVolunteerFirstName(event)}
-          />
-          <br/>
-          <input
-            className="last"
-            type="text"
-            placeholder="Last Name"
-            value={this.state.form_volunteer_last_name}
-            onChange={event => this.updateVolunteerLastName(event)}
-          />
-          <br/>
-          <input
-            className="age"
-            type="text"
-            placeholder="Age"
-            value={this.state.form_volunteer_age}
-            onChange={event => this.updateVolunteerAge(event)}
-          />
-          <br/>
-          <input
-            className="gender"
-            type="text"
-            placeholder="Gender"
-            value={this.state.form_volunteer_gender}
-            onChange={event => this.updateVolunteerGender(event)}
-          />
-          <br/>
-          <input
-            className="state"
-            type="text"
-            placeholder="State"
-            value={this.state.form_volunteer_state}
-            onChange={event => this.updateVolunteerState(event)}
-          />
-          <br/>
-          <input
-            className="email"
-            type="text"
-            placeholder="Email"
-            value={this.state.form_volunteer_email}
-            onChange={event => this.updateVolunteerEmail(event)}
-          />
-          <br/>
+      <div className="signup-inputContainer">
+        <input
+          className="user"
+          type="text"
+          placeholder="Create Username"
+          value={this.state.form_volunteer_username}
+          onChange={event => this.updateVolunteerUsername(event)}
+        />
+        <br />
+        <input
+          className="pass"
+          type="text"
+          placeholder="Create Password"
+          value={this.state.form_volunteer_password}
+          onChange={event => this.updateVolunteerPassword(event)}
+        />
+        <br />
+        <input
+          className="first"
+          type="text"
+          placeholder="First Name"
+          value={this.state.form_volunteer_first_name}
+          onChange={event => this.updateVolunteerFirstName(event)}
+        />
+        <br />
+        <input
+          className="last"
+          type="text"
+          placeholder="Last Name"
+          value={this.state.form_volunteer_last_name}
+          onChange={event => this.updateVolunteerLastName(event)}
+        />
+        <br />
+        <input
+          className="age"
+          type="text"
+          placeholder="Age"
+          value={this.state.form_volunteer_age}
+          onChange={event => this.updateVolunteerAge(event)}
+        />
+        <br />
+        <input
+          className="gender"
+          type="text"
+          placeholder="Gender"
+          value={this.state.form_volunteer_gender}
+          onChange={event => this.updateVolunteerGender(event)}
+        />
+        <br />
+        <input
+          className="state"
+          type="text"
+          placeholder="State"
+          value={this.state.form_volunteer_state}
+          onChange={event => this.updateVolunteerState(event)}
+        />
+        <br />
+        <input
+          className="email"
+          type="text"
+          placeholder="Email"
+          value={this.state.form_volunteer_email}
+          onChange={event => this.updateVolunteerEmail(event)}
+        />
+        <br />
+        <input
+          className="phone"
+          type="text"
+          placeholder="Phone"
+          value={this.state.form_volunteer_phone}
+          onChange={event => this.updateVolunteerPhone(event)}
+        />
+        <br />
 
-          <button onClick={() => this.handleVolunteerFormSubmit()}>Sign Up</button>
+        <button onClick={() => this.handleVolunteerFormSubmit()}>Sign Up</button>
 
-        </div>
+      </div>
     </div>
 
-    );
-  }
+  );
+}
 };

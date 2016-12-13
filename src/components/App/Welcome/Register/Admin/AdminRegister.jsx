@@ -12,11 +12,12 @@ export default class AdminRegister extends Component {
       form_admin_last_name: '',
       form_admin_age: '',
       form_admin_email: '',
+      form_admin_phone: '',
       form_admin_gender: '',
       form_admin_state: '',
       form_admin_user_type: '',
+    };
   }
-}
 
 // ADMIN SIGN UP PAGE
 
@@ -68,6 +69,12 @@ export default class AdminRegister extends Component {
     });
   }
 
+  updateAdminPhone(e) {
+    this.setState({
+      form_admin_phone: e.target.value,
+    });
+  }
+
   // submits the registration form
   handleAdminFormSubmit() {
     fetch('/admin', {
@@ -84,7 +91,8 @@ export default class AdminRegister extends Component {
         gender: this.state.form_admin_gender,
         state: this.state.form_admin_state,
         email: this.state.form_admin_email,
-      })
+        phone: this.state.form_admin_phone,
+      }),
     })
     .then(this.setState({
       form_admin_username: '',
@@ -95,6 +103,7 @@ export default class AdminRegister extends Component {
       form_admin_gender: '',
       form_admin_state: '',
       form_admin_email: '',
+      form_admin_phone: '',
     }))
     .catch(err => console.log(err));
   }
@@ -102,80 +111,88 @@ export default class AdminRegister extends Component {
 render() {
   return (
     <div>
-        <div className='hOne'>
-            <h1>SIGN UP</h1>
-            <button onClick={this.props.HideModal}>X</button>
-        </div>
+      <div className="hOne">
+        <h1>SIGN UP</h1>
+        <button onClick={this.props.HideModal}>X</button>
+      </div>
 
-        <div className="signup-inputContainer">
-          <input
-            className="user"
-            type="text"
-            placeholder="Create Username"
-            value={this.state.form_admin_username}
-            onChange={event => this.updateAdminUsername(event)}
-          />
-          <br/>
-          <input
-            className="pass"
-            type="text"
-            placeholder="Create Password"
-            value={this.state.form_admin_password}
-            onChange={event => this.updateAdminPassword(event)}
-          />
-          <br/>
-          <input
-            className="first"
-            type="text"
-            placeholder="First Name"
-            value={this.state.form_admin_first_name}
-            onChange={event => this.updateAdminFirstName(event)}
-          />
-          <br/>
-          <input
-            className="last"
-            type="text"
-            placeholder="Last Name"
-            value={this.state.form_admin_last_name}
-            onChange={event => this.updateAdminLastName(event)}
-          />
-          <br/>
-          <input
-            className="age"
-            type="text"
-            placeholder="Age"
-            value={this.state.form_admin_age}
-            onChange={event => this.updateAdminAge(event)}
-          />
-          <br/>
-          <input
-            className="gender"
-            type="text"
-            placeholder="Gender"
-            value={this.state.form_admin_gender}
-            onChange={event => this.updateAdminGender(event)}
-          />
-          <br/>
-          <input
-            className="state"
-            type="text"
-            placeholder="State"
-            value={this.state.form_admin_state}
-            onChange={event => this.updateAdminState(event)}
-          />
-          <br/>
-          <input
-            className="email"
-            type="text"
-            placeholder="Email"
-            value={this.state.form_admin_email}
-            onChange={event => this.updateAdminEmail(event)}
-          />
-          <br/>
+      <div className="signup-inputContainer">
+        <input
+          className="user"
+          type="text"
+          placeholder="Create Username"
+          value={this.state.form_admin_username}
+          onChange={event => this.updateAdminUsername(event)}
+        />
+        <br />
+        <input
+          className="pass"
+          type="text"
+          placeholder="Create Password"
+          value={this.state.form_admin_password}
+          onChange={event => this.updateAdminPassword(event)}
+        />
+        <br />
+        <input
+          className="first"
+          type="text"
+          placeholder="First Name"
+          value={this.state.form_admin_first_name}
+          onChange={event => this.updateAdminFirstName(event)}
+        />
+        <br />
+        <input
+          className="last"
+          type="text"
+          placeholder="Last Name"
+          value={this.state.form_admin_last_name}
+          onChange={event => this.updateAdminLastName(event)}
+        />
+        <br />
+        <input
+          className="age"
+          type="text"
+          placeholder="Age"
+          value={this.state.form_admin_age}
+          onChange={event => this.updateAdminAge(event)}
+        />
+        <br />
+        <input
+          className="gender"
+          type="text"
+          placeholder="Gender"
+          value={this.state.form_admin_gender}
+          onChange={event => this.updateAdminGender(event)}
+        />
+        <br />
+        <input
+          className="state"
+          type="text"
+          placeholder="State"
+          value={this.state.form_admin_state}
+          onChange={event => this.updateAdminState(event)}
+        />
+        <br />
+        <input
+          className="email"
+          type="text"
+          placeholder="Email"
+          value={this.state.form_admin_email}
+          onChange={event => this.updateAdminEmail(event)}
+        />
+        <br />
+        <input
+          className="phone"
+          type="text"
+          placeholder="Phone"
+          value={this.state.form_admin_phone}
+          onChange={event => this.updateAdminPhone(event)}
+        />
+        <br />
 
-          <button onClick={() => this.handleAdminFormSubmit()}>Sign Up</button>
+        <button onClick={() => this.handleAdminFormSubmit()}>Sign Up</button>
 
-        </div>
+      </div>
     </div>
 
     );

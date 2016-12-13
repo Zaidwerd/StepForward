@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import style from './Admin.css';
 import QR from './QR.jsx';
 import Search from './Search.jsx';
+import AdminChat from '../Socket/AdminChat.jsx'
 
 export default class Admin extends Component {
 
@@ -32,6 +33,7 @@ export default class Admin extends Component {
 
         <div id="admin-chat">
           <h1>Announcements</h1>
+          <AdminChat />
         </div>
 
         <div id="admin-qr">

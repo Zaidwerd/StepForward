@@ -29,7 +29,7 @@ render() {
             <br/>
 
             <input className='pass'
-            type="text"
+            type="password"
             placeholder="Password"
             value={this.props.volunteerPassword}
             onChange={this.props.updateVolunteerPassword}

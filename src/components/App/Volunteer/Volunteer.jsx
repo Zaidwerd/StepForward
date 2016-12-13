@@ -1,22 +1,23 @@
 import React, { Component } from 'react';
-import style from './Volunteer.css';
+import VolunteerChat from '../Socket/VolunteerChat.jsx';
+import './Volunteer.css';
 
 export default class Volunteer extends Component {
 
-render() {
-  return (
-    <div className= "test">
-    <div id= "volunteer-data">
-      <h1>Data</h1>
-        <h2>{this.props.volunteerUsername}</h2>
-        <img src={this.props.volunteerQR}/>
-    </div>
+  render() {
+    return (
+      <div className="test">
+        <div id="volunteer-data">
+          <h1>Welcome {this.props.volunteerFirstName}</h1>
+          <img src={this.props.volunteerQR} alt="volunteer qr code" />
+        </div>
 
-    <div id= "volunteer-chat">
-      <h1>Announcements</h1>
-    </div>
+        <div id="volunteer-chat">
+          <h1>Announcements</h1>
+          <VolunteerChat />
+        </div>
 
-    </div>
+      </div>
 
     );
   }
