@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "Volunteer Check-In",
   "main": "app.js",
+  "engines": {
+    "node": "6.8.1"
+  },
+  "private": true,
   "scripts": {
     "clean": "rm -rf dist && rm -rf node_modules",
     "heroku-prebuild": "scripts/deployment_react.sh",
@@ -23,20 +27,15 @@
   "homepage": "https://github.com/Zaidwerd/StepForward#readme",
   "dependencies": {
     "body-parser": "^1.15.2",
-    "jsqr": "^0.2.1",
-    "md-gum-polyfill": "^1.0.0",
+    "express": "^4.14.0",
     "method-override": "^2.3.7",
     "morgan": "^1.7.0",
     "path": "^0.12.7",
-    "pg-promise": "^5.4.7",
-    "react": "^15.4.1",
-    "react-dom": "^15.4.1",
-    "socket.io": "^1.7.2",
-    "socket.io-client": "^1.7.2",
-    "watch": "^1.0.1",
-    "webrtc-adapter": "^2.1.0"
+    "pg-promise": "^5.4.7"
   },
   "devDependencies": {
+    "jsqr": "^0.2.1",
+    "md-gum-polyfill": "^1.0.0",
     "babel": "^6.5.2",
     "babel-core": "^6.18.2",
     "babel-loader": "^6.2.8",
@@ -61,6 +60,10 @@
     "webpack": "^1.13.3",
     "webpack-dev-server": "^1.16.2",
     "react": "^15.4.1",
-    "react-dom": "^15.4.1"
+    "react-dom": "^15.4.1",
+    "socket.io": "^1.7.2",
+    "socket.io-client": "^1.7.2",
+    "watch": "^1.0.1",
+    "webrtc-adapter": "^2.1.0"
   }
 }
