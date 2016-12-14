@@ -46,6 +46,7 @@ export default class App extends Component {
         loggedIn: false,
       },
       currentUser: null,
+      currentEvent: null,
     };
   }
 

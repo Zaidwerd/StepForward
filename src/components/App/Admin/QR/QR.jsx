@@ -6,11 +6,11 @@ import 'webrtc-adapter';
 const getDeviceId = require('./getDeviceId');
 
 export default class QR extends Component {
-  // static PropTypes = {
+  // static PropTypes: {
   //   handleScan: PropTypes.func.isRequired,
   //   handleError: PropTypes.func.isRequired,
   //   handleImageNotRecognized: PropTypes.func,
-  //   interval: PropTypes.oneOfType([
+  //   interval: PropTypes.oneOfType)[
   //     PropTypes.number,
   //     PropTypes.bool,
   //   ]),
@@ -181,26 +181,25 @@ export default class QR extends Component {
     const previewStyle = {
       display: 'block',
       objectFit: 'contain',
-    }
+    };
     const canvasStyle = {
       display: 'none',
-    }
+    };
     const inputStyle = {
-      display: 'none',
-    }
+    };
 
     return (
       <section>
         <button onClick={this.props.hideQR}>X</button>
         {this.props.legacyMode ? (
           <div>
-            <input style={inputStyle} id="react-qr-reader-input" type="file" accept="image/*" ref="input" onChange={this.handleInputChange}/>
-            <img style={{previewStyle, display: 'none'}} ref="img"/>
+            <input style={inputStyle} id="react-qr-reader-input" type="file" accept="image/*" ref="input" onChange={this.handleInputChange} />
+            <img style={{previewStyle, display: 'none'}} ref="img" />
           </div>
         ) : (
-          <video style={previewStyle} ref="preview"/>
+          <video style={previewStyle} ref="preview" />
         )}
-        <canvas style={canvasStyle} ref="canvas"/>
+        <canvas style={canvasStyle} ref="canvas" />
       </section>
     )
   }

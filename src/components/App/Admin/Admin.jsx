@@ -5,6 +5,21 @@ import Search from './Search/Search.jsx';
 import AdminChat from '../Socket/Admin/AdminChat.jsx'
 
 export default class Admin extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      result: 'No result',
+    };
+  }
+
+  handleScan(data){
+    this.setState({
+      result: data,
+    })
+  }
+  handleError(err){
+    console.error(err)
+  }
 
   adminQRShowModal(e) {
     // console.log("here")
@@ -19,6 +34,11 @@ export default class Admin extends Component {
   }
 
   render() {
+    const previewStyle = {
+      height: 240,
+      width: 320,
+    }
+
     return (
       <div className="test">
         <br />
@@ -38,8 +58,12 @@ export default class Admin extends Component {
 
         <div id="admin-qr">
           <QR
+            previewStyle={previewStyle}
+            handleError={this.handleError}
+            handleScan={this.handleScan.bind(this)}
             hideQR={event => this.adminQRHideModal(event)}
           />
+            <p>Volunteer: {this.state.result}</p>
         </div>
       </div>
 
