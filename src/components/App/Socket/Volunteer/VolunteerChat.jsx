@@ -48,6 +48,6 @@ export default class VolunteerChat extends Component {
           </form>
         </div>
       </div>
-    )
+    );
   }
 }

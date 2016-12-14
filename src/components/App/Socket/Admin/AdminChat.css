@@ -1,0 +1,24 @@
+.admin-chat{
+
+}
+
+.admin-chat-screet{
+
+}
+
+.admin-message{
+
+}
+
+li{
+  text-decoration: none;
+  font-size: 20em;
+}
+
+.admin-button{
+  width: 100px;
+  height: 38px;
+  border: solid grey 2px;
+  background: transparent;
+  margin: 0;
+}
