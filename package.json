@@ -31,7 +31,9 @@
     "method-override": "^2.3.7",
     "morgan": "^1.7.0",
     "path": "^0.12.7",
-    "pg-promise": "^5.4.7"
+    "pg-promise": "^5.4.7",
+    "socket.io": "^1.7.2",
+    "socket.io-client": "^1.7.2",
   },
   "devDependencies": {
     "jsqr": "^0.2.1",
@@ -61,8 +63,6 @@
     "webpack-dev-server": "^1.16.2",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
-    "socket.io": "^1.7.2",
-    "socket.io-client": "^1.7.2",
     "watch": "^1.0.1",
     "webrtc-adapter": "^2.1.0"
   }
