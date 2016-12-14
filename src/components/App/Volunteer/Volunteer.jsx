@@ -6,14 +6,14 @@ export default class Volunteer extends Component {
 
   render() {
     return (
-      <div className="test">
-        <div id="volunteer-data">
-          <h1>Welcome {this.props.volunteerFirstName}</h1>
-          <img src={this.props.volunteerQR} alt="volunteer qr code" />
+      <div id="volunteer-container">
+        <div className="volunteer-data">
+          <h1 className="volunteer-title">Welcome {this.props.volunteerFirstName}</h1>
+          <img className="volunteer-qr" src={this.props.volunteerQR} alt="volunteer qr code" />
         </div>
 
         <div id="volunteer-chat">
-          <h1>Announcements</h1>
+          <h1 className="volunteer-chat-title">Announcements</h1>
           <VolunteerChat />
         </div>
 
@@ -21,4 +21,4 @@ export default class Volunteer extends Component {
 
     );
   }
-};
+}

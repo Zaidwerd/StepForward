@@ -1,56 +1,49 @@
 import React, { Component } from 'react';
-// import style from './Login.css';
+import style from '../Login.css';
 
 export default class VolunteerLogin extends Component {
-  constructor(props) {
-    super();
 
-    this.state = {
-    }
-  }
+  render() {
+    return (
+      <div className= "login-container">
 
-render() {
-  return (
-    <div className= "test">
-        <div className='userBox'>
+        <h1 className='login-title'>VOLUNTEER LOGIN</h1>
 
-          <div className='hOne'>
-            <h1 className='header-title'>VOLUNTEER LOGIN</h1>
-          </div>
-          <br/>
-          <div className='inputContainer'>
-            <input className='user'
+        <br />
+        <div className='login-input-container'>
+          <input
+            className="user"
             type="text"
             placeholder="Username"
             value={this.props.volunteerUsername}
             onChange={this.props.updateVolunteerUsername}
-            />
-            <br/>
-            <br/>
+          />
 
-            <input className='pass'
+          <br />
+          <br />
+
+          <input
+            className="pass"
             type="password"
             placeholder="Password"
             value={this.props.volunteerPassword}
             onChange={this.props.updateVolunteerPassword}
-            />
+          />
 
 
-            <br/>
-            <br/>
-            <button onClick={this.props.simpleVolunteerAuth}> Log In </button>
+          <br />
+          <br />
+          <button className="login-button" onClick={this.props.simpleVolunteerAuth}> Log In </button>
 
-            <br/>
+          <br />
 
-            <p className="or">-or-</p>
+          <p className="or">-or-</p>
 
-            <button onClick={this.props.ShowModal}>Register</button>
-
-          </div>
+          <button className="register-button" onClick={this.props.ShowModal}>Register</button>
 
         </div>
-    </div>
+      </div>
 
     );
   }
-};
+}

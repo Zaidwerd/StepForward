@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import style from './Login.css';
+import style from '../Register.css';
 
 export default class VolunteerRegister extends Component {
   constructor(props) {
@@ -20,7 +20,7 @@ export default class VolunteerRegister extends Component {
     };
   }
 
-//eVolunteer SIGN UP PAGE
+// VOLUNTEER SIGN UP PAGE
 
   updateVolunteerUsername(e) {
     this.setState({
@@ -113,93 +113,91 @@ export default class VolunteerRegister extends Component {
     .catch(err => console.log(err));
   }
 
-render() {
-  return (
-    <div>
-      <div className='hOne'>
-        <h1>SIGN UP</h1>
-        <button onClick={this.props.HideModal}>X</button>
+  render() {
+    return (
+      <div className="register-container">
+        <button className="register-exit" onClick={this.props.HideModal}>X</button>
+        <h1 className="register-title">Volunteer Sign Up</h1>
+
+        <div className="register-input-container">
+          <input
+            className="r-input"
+            type="text"
+            placeholder="Create Username"
+            value={this.state.form_volunteer_username}
+            onChange={event => this.updateVolunteerUsername(event)}
+          />
+          <br />
+          <input
+            className="r-input"
+            type="text"
+            placeholder="Create Password"
+            value={this.state.form_volunteer_password}
+            onChange={event => this.updateVolunteerPassword(event)}
+          />
+          <br />
+          <input
+            className="r-input"
+            type="text"
+            placeholder="First Name"
+            value={this.state.form_volunteer_first_name}
+            onChange={event => this.updateVolunteerFirstName(event)}
+          />
+          <br />
+          <input
+            className="r-input"
+            type="text"
+            placeholder="Last Name"
+            value={this.state.form_volunteer_last_name}
+            onChange={event => this.updateVolunteerLastName(event)}
+          />
+          <br />
+          <input
+            className="r-input"
+            type="text"
+            placeholder="Age"
+            value={this.state.form_volunteer_age}
+            onChange={event => this.updateVolunteerAge(event)}
+          />
+          <br />
+          <input
+            className="r-input"
+            type="text"
+            placeholder="Gender"
+            value={this.state.form_volunteer_gender}
+            onChange={event => this.updateVolunteerGender(event)}
+          />
+          <br />
+          <input
+            className="r-input"
+            type="text"
+            placeholder="State"
+            value={this.state.form_volunteer_state}
+            onChange={event => this.updateVolunteerState(event)}
+          />
+          <br />
+          <input
+            className="r-input"
+            type="text"
+            placeholder="Email"
+            value={this.state.form_volunteer_email}
+            onChange={event => this.updateVolunteerEmail(event)}
+          />
+          <br />
+          <input
+            className="r-input"
+            type="text"
+            placeholder="Phone"
+            value={this.state.form_volunteer_phone}
+            onChange={event => this.updateVolunteerPhone(event)}
+          />
+          <br />
+
+          <button className="register-submit-button" onClick={() => this.handleVolunteerFormSubmit()}>Sign Up</button>
+
+        </div>
       </div>
 
-      <div className="signup-inputContainer">
-        <input
-          className="user"
-          type="text"
-          placeholder="Create Username"
-          value={this.state.form_volunteer_username}
-          onChange={event => this.updateVolunteerUsername(event)}
-        />
-        <br />
-        <input
-          className="pass"
-          type="text"
-          placeholder="Create Password"
-          value={this.state.form_volunteer_password}
-          onChange={event => this.updateVolunteerPassword(event)}
-        />
-        <br />
-        <input
-          className="first"
-          type="text"
-          placeholder="First Name"
-          value={this.state.form_volunteer_first_name}
-          onChange={event => this.updateVolunteerFirstName(event)}
-        />
-        <br />
-        <input
-          className="last"
-          type="text"
-          placeholder="Last Name"
-          value={this.state.form_volunteer_last_name}
-          onChange={event => this.updateVolunteerLastName(event)}
-        />
-        <br />
-        <input
-          className="age"
-          type="text"
-          placeholder="Age"
-          value={this.state.form_volunteer_age}
-          onChange={event => this.updateVolunteerAge(event)}
-        />
-        <br />
-        <input
-          className="gender"
-          type="text"
-          placeholder="Gender"
-          value={this.state.form_volunteer_gender}
-          onChange={event => this.updateVolunteerGender(event)}
-        />
-        <br />
-        <input
-          className="state"
-          type="text"
-          placeholder="State"
-          value={this.state.form_volunteer_state}
-          onChange={event => this.updateVolunteerState(event)}
-        />
-        <br />
-        <input
-          className="email"
-          type="text"
-          placeholder="Email"
-          value={this.state.form_volunteer_email}
-          onChange={event => this.updateVolunteerEmail(event)}
-        />
-        <br />
-        <input
-          className="phone"
-          type="text"
-          placeholder="Phone"
-          value={this.state.form_volunteer_phone}
-          onChange={event => this.updateVolunteerPhone(event)}
-        />
-        <br />
-
-        <button onClick={() => this.handleVolunteerFormSubmit()}>Sign Up</button>
-
-      </div>
-    </div>
-
-  );
+    );
+  }
 }
-};

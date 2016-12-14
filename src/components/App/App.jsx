@@ -224,13 +224,13 @@ export default class App extends Component {
   volunteerRegisterHideModal(e){
     // console.log("here")
     document.querySelector('#volunteer-register').style.display = "none";
-    document.querySelector('#admin-login').style.display = "block";
-    document.querySelector('#volunteer-login').style.display = "block";
+    document.querySelector('#admin-login').style.display = "inline-block";
+    document.querySelector('#volunteer-login').style.display = "inline-block";
   }
 
   logoutLink(e){
-    document.querySelector('#admin-login').style.display = "block";
-    document.querySelector('#volunteer-login').style.display = "block";
+    document.querySelector('#admin-login').style.display = "inline-block";
+    document.querySelector('#volunteer-login').style.display = "inline-block";
     document.querySelector('#volunteer-register').style.display = "none";
     document.querySelector('#admin-register').style.display = "none";
     document.querySelector('#volunteer').style.display = "none";
@@ -263,14 +263,28 @@ export default class App extends Component {
     });
   }
 
+  enterSite(e) {
+    document.querySelector('#landing-container').style.display = "none";
+    document.querySelector('#admin-login').style.display = "inline-block";
+    document.querySelector('#volunteer-login').style.display = "inline-block";
+  }
+
   render() {
     return (
-      <container className="test">
+      <container id="main">
+      <link href="https://fonts.googleapis.com/css?family=Aref+Ruqaa|Roboto+Condensed" rel="stylesheet" />
         <div>
-          <header>
-            <h1 className="header-title">Step Forward</h1>
-            <button className="link-button" onClick={event => this.logoutLink(event)}>Logout</button>
+          <header className="nav-container">
+            <h1 className="nav-title">Step Forward</h1>
+            <button className="nav-button" onClick={event => this.logoutLink(event)}>Logout</button>
           </header>
+
+          <div id="landing-container">
+            <div className="landing">
+              <h1 className="landing-title">One Volunteer At A Time</h1>
+              <button className="landing-button" onClick={event => this.enterSite(event)}>Enter</button>
+            </div>
+          </div>
 
           <div id="admin-login">
             <AdminLogin

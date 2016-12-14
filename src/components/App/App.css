@@ -1,61 +1,146 @@
-.test{
-  background-color: black;
-  color: white;
+body{
+  background-image: "public/images/hands.jpg";
+  background-position: cover;
+  background-repeat: no-repeat;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
-header{
-  background-color: grey;
+/*NAV-HEADER*/
+
+.nav-container{
+  background-color: #fafafa;
   color: black;
   height: 80px;
   width: 100%;
+  border-bottom: solid black 2px;
 }
 
-.header-title{
-  height: 15%;
+.nav-title{
+  font-size: 4em;
+  margin: 0;
+  font-family: 'Aref Ruqaa', serif;
+}
+
+.nav-button{
+  float: right;
+  width: 100px;
+  height: 38px;
+  border: none;
+  background: transparent;
   margin: 0;
 }
 
-.link-button{
-  float: right;
-}
+/*LANDING DIV*/
 
-#admin-login{
+#landing-container{
   height: auto;
-  width: 45%;
-  display: inline-block;
-  float: left;
+  width: 98%;
+  display: block;
   margin: 2%;
   z-index: 1;
   text-align: center;
+}
+
+.landing{
+  text-align: center;
+}
+
+.landing-title{
+  margin: 6%;
+  font-size: 20vh;
+  color: #ECEFF1;
+  text-shadow: 2px 2px 4px #000000;
+
+}
+
+.landing-button{
+  width: 150px;
+  height: 50px;
+  border: none;
+  border-radius: 2px;
+  padding: 5px;
+  color: #222;
+  cursor: pointer;
+  font-variant: center;
+  font-size: 2em;
+  margin-top: 3%;
+  background: transparent;
+
+  transition: background-color 0.3s ease-out,
+              color 0.2s ease-out,
+              text-transform 0.2s ease-out;
+}
+
+/*LOGIN*/
+
+#admin-login{
+  color: #222;
+  height: 50%;
+  width: 33%;
+  display: none;
+  float: left;
+  margin: 3s%;
+  padding: 5%;
+  z-index: 1;
+  text-align: center;
+  animation: shwoop .3s ease-in-out;
+  transform: scaleY(1);
+  -webkit-box-shadow: 17px 20px 5px 0px rgba(0,0,0,0.37);
+  -moz-box-shadow: 17px 20px 5px 0px rgba(0,0,0,0.37);
+  box-shadow: 17px 20px 5px 0px rgba(0,0,0,0.37);
+}
+
+@keyframes shwoop {
+  0% {
+    top: (0px);
+    transform: scaleY(0);
+  }
+  100% {
+    bottom: (100px);
+    transform: scaleY(1);
+  }
 }
 
 #volunteer-login{
-  height: auto;
-  width: 45%;
-  display: inline-block;
+  color: #222;
+  height: 50%;
+  width: 33%;
+  display: none;
   float: left;
-  margin: 2%;
+  margin-left: 5%;
+  padding: 5%;
   z-index: 1;
   text-align: center;
+  animation: shwoop .3s ease-in-out;
+  transform: scaleY(1);
+  -webkit-box-shadow: 17px 20px 5px 0px rgba(0,0,0,0.37);
+  -moz-box-shadow: 17px 20px 5px 0px rgba(0,0,0,0.37);
+  box-shadow: 17px 20px 5px 0px rgba(0,0,0,0.37);
 }
+
+/*REGISTER*/
 
 #admin-register{
   display: none;
   z-index: 2;
-  background-color: red;
+  background-color: white;
   width: 50%;
   text-align: center;
   margin: 0 25%;
+  color: black;
 }
 
 #volunteer-register{
   display: none;
   z-index: 2;
-  background-color: red;
+  background-color: white;
   width: 50%;
   text-align: center;
   margin: 0 25%;
+  color: black;
 }
+
+/*APP PAGES*/
 
 #admin{
   display: none;

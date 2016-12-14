@@ -1,0 +1,24 @@
+.volunteer-chat{
+
+}
+
+.volunteer-chat-screet{
+
+}
+
+.volunteer-message{
+
+}
+
+li{
+  text-decoration: none;
+  font-size: 20em;
+}
+
+.volunteer-button{
+  width: 100px;
+  height: 38px;
+  border: solid grey 2px;
+  background: transparent;
+  margin: 0;
+}

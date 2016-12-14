@@ -22,12 +22,7 @@
   },
   "homepage": "https://github.com/Zaidwerd/StepForward#readme",
   "dependencies": {
-    "bcryptjs": "^2.3.0",
     "body-parser": "^1.15.2",
-    "crypto": "0.0.3",
-    "express": "^4.14.0",
-    "express-session": "^1.14.2",
-    "http": "0.0.0",
     "jsqr": "^0.2.1",
     "md-gum-polyfill": "^1.0.0",
     "method-override": "^2.3.7",
@@ -64,6 +59,8 @@
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
     "webpack": "^1.13.3",
-    "webpack-dev-server": "^1.16.2"
+    "webpack-dev-server": "^1.16.2",
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1"
   }
 }

@@ -1,0 +1,39 @@
+#login-container{
+
+}
+
+.login-title{
+
+}
+
+.login-input-container{
+
+}
+
+.user{
+  width: 25vw;
+  height: 8vh;
+  font-size: 3vh;
+}
+
+.pass{
+  width: 25vw;
+  height: 8vh;
+  font-size: 3vh;
+}
+
+.login-button{
+  width: 100px;
+  height: 38px;
+  border: solid grey 2px;
+  background: transparent;
+  margin: 0;
+}
+
+.register-button{
+  width: 100px;
+  height: 38px;
+  border: solid grey 2px;
+  background: transparent;
+  margin: 0;
+}

@@ -1,51 +1,49 @@
 import React, { Component } from 'react';
-// import style from './Login.css';
+import style from '../Login.css';
 
 export default class AdminLogin extends Component {
 
 render() {
   return (
-    <div className= "test">
-        <div className='userBox'>
+    <div id="login-container">
 
-          <div className='hOne'>
-            <h1 className='header-title'>ADMIN LOG IN</h1>
-          </div>
-          <br/>
-          <div className='inputContainer'>
-            <input className='user'
-            type="text"
-            placeholder="Username"
-            value={this.props.adminUsername}
-            onChange={this.props.updateAdminUsername}
-            />
+      <h1 className="login-title">ADMIN LOGIN</h1>
 
-            <br/>
-            <br/>
+      <br />
+      <div className="login-input-container">
+        <input
+          className="user"
+          type="text"
+          placeholder="Username"
+          value={this.props.adminUsername}
+          onChange={this.props.updateAdminUsername}
+        />
 
-            <input className='pass'
-            type="password"
-            placeholder="Password"
-            value={this.props.adminPassword}
-            onChange={this.props.updateAdminPassword}
-            />
+        <br />
+        <br />
+
+        <input
+          className="pass"
+          type="password"
+          placeholder="Password"
+          value={this.props.adminPassword}
+          onChange={this.props.updateAdminPassword}
+        />
 
 
-            <br/>
-            <br/>
-            <button onClick={this.props.simpleAdminAuth}> Log In </button>
+        <br />
+        <br />
+        <button className="login-button" onClick={this.props.simpleAdminAuth}> Log In </button>
 
-            <br/>
+        <br />
 
-            <p className="or">-or-</p>
+        <p className="or">-or-</p>
 
-            <button onClick={this.props.ShowModal}>Register</button>
+        <button className="register-button" onClick={this.props.ShowModal}>Register</button>
 
-          </div>
-
-        </div>
+      </div>
     </div>
 
-    );
-  }
-};
+  );
+}
+}

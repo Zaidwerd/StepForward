@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import style from './VolunteerChat';
 
 export default class VolunteerChat extends Component {
   componentWillMount() {
@@ -36,19 +37,14 @@ export default class VolunteerChat extends Component {
 
   render() {
     return(
-      <div className='message-popup'>
-        <div
-          className="message-header"
-          onClick={()=>{document.querySelector('.message-popup').style.display = "none"}}
-        ><span>×</span>
-        </div>
-        <div className="screen">
+      <div className="volunteer-chat">
+        <div className="volunteer-chat-screen">
           <ul id="volunteer-message"></ul>
         </div>
-        <div className='socket-form'>
+        <div className="volunteer-chat-form">
           <form onSubmit={event => this.handleSubmit(event)}>
             <input id="volunteer-m" onChange={event => this.handleInputChange(event)}/>
-            <button>Send</button>
+            <button className="volunteer-button">Send</button>
           </form>
         </div>
       </div>
