@@ -3,21 +3,26 @@
 }
 
 .volunteer-chat-screet{
-
 }
 
-.volunteer-message{
-
+#volunteer-message{
+  list-style-type: none;
 }
 
-li{
-  text-decoration: none;
-  font-size: 20em;
+#volunteer-message li{
+  list-style-type: none;
+  font-size: 25px;
+}
+
+#volunteer-m{
+  width: 30vw;
+  height: 35px;
+  font-size: 30px;
 }
 
 .volunteer-button{
   width: 100px;
-  height: 38px;
+  height: 35px;
   border: solid grey 2px;
   background: transparent;
   margin: 0;

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import style from './VolunteerChat';
+import style from './VolunteerChat.css';
 
 export default class VolunteerChat extends Component {
   componentWillMount() {
