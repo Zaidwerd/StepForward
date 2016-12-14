@@ -2,7 +2,7 @@ require('dotenv').config({ silent: true });
 const express = require('express');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
-const path = require('path')
+const path = require('path');
 const methodOverride = require('method-override');
 
 const app = express();
@@ -13,9 +13,7 @@ const http = require('http').Server(app);
 const io = require('socket.io')(http);
 
 io.on('connection', socket => {
-  console.log('a user connected');
   socket.on('server-chat', msg => {
-    console.log('chat: ' + msg);
     socket.broadcast.emit('chatroom', {msg : msg});
   });
 
@@ -36,7 +34,7 @@ app.use(logger(isDev ? 'dev' : 'common'));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(methodOverride('_method'))
+app.use(methodOverride('_method'));
 
 app.use(express.static(path.join(__dirname, 'dist')));
 
