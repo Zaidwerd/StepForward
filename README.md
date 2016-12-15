@@ -53,3 +53,7 @@ in the volunteer page will display the assigned QR code and a chat/announce sect
   This is new technology I am unfamiliar with and will take some time to understand and implement
 * Webcam QR scan
   Getting Webcam QR scan to work properly. Again new tech
+
+### Special Thanks:
+* JodusNodus at https://github.com/JodusNodus/react-qr-reader for the qr scan implimentation code.
+* Donald Highe, Sang Min, Synclair Wang and Nico Cucciniello at https://github.com/ga-diamonds-project3/project-3 for helping understand and impliment Socket IO

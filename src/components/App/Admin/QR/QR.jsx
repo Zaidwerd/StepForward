@@ -1,3 +1,5 @@
+// Code was implemented from https://github.com/JodusNodus/react-qr-reader
+
 import React, { Component, PropTypes } from 'react';
 import jsQR from 'jsqr';
 import 'md-gum-polyfill';

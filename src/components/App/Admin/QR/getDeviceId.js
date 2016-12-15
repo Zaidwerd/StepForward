@@ -1,3 +1,5 @@
+// Code was implemented from https://github.com/JodusNodus/react-qr-reader
+
 module.exports = function getDeviceId(facingMode){
   return new Promise((resolve, reject) => {
     navigator.mediaDevices.enumerateDevices()

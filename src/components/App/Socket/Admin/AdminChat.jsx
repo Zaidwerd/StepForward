@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import style from './AdminChat.css';
 
+// Code was help impliment with https://github.com/ga-diamonds-project3/project-3
 export default class VolunteerChat extends Component {
   componentWillMount() {
     this.socketFn();
   }
 
   socketFn() {
-    // receive data from server through socket 'chatroom'
     const socket = io();
     socket.on('chatroom', msg => {
       console.log('data on frontend', msg);
@@ -19,11 +19,9 @@ export default class VolunteerChat extends Component {
   }
 
   handleSubmit(e) {
-    // console.log('submit event', e.target);
     e.preventDefault();
     const socket = io();
     const i = document.getElementById('admin-m');
-    // send data to server through socket 'server-chat'
     socket.emit('server-chat', i.value);
     i.value = '';
   }
