@@ -78,7 +78,7 @@ export default class App extends Component {
     document.querySelector('#volunteer-login').style.display = "none";
   }
 
-  // grabs the password from the login form
+  // grabs the password from the admin login form
   updateAdminPassword(e) {
     this.setState({
       admin_login: {
@@ -88,7 +88,7 @@ export default class App extends Component {
       },
     });
   }
-  // grabs the username from the login form
+  // grabs the username from the admin login form
   updateAdminUsername(e) {
     this.setState({
       admin_login: {
@@ -99,7 +99,7 @@ export default class App extends Component {
     });
   }
 
-  // user authorization
+  // user admin authorization
   simpleAdminAuth() {
     console.log("got here");
     fetch('/auth/admin', {
@@ -153,7 +153,7 @@ export default class App extends Component {
     document.querySelector('#volunteer-login').style.display = "none";
   }
 
-  // grabs the password from the login form
+  // grabs the password from the volunteer login form
   updateVolunteerPassword(e) {
     this.setState({
       volunteer_login: {
@@ -163,7 +163,7 @@ export default class App extends Component {
       },
     });
   }
-  // grabs the username from the login form
+  // grabs the username from the volunteer login form
   updateVolunteerUsername(e) {
     this.setState({
       volunteer_login: {
@@ -174,7 +174,7 @@ export default class App extends Component {
     });
   }
 
-  // user authorization
+  // user volunteer authorization
   simpleVolunteerAuth() {
     // console.log("got here");
     fetch('/auth/volunteer', {
@@ -199,7 +199,7 @@ export default class App extends Component {
     .catch(err => console.log(err));
   }
 
-
+// Hides modals
   adminRegisterShowModal(e){
     // console.log("here")
     document.querySelector('#admin-register').style.display = "block";

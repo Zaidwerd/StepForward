@@ -33,7 +33,7 @@ export default class QR extends Component {
     super(props)
 
     this.initiate = this.initiate.bind(this)
-    this.initiateLegacyMode = this.initiateLegacyMode.bind(this)
+    // this.initiateLegacyMode = this.initiateLegacyMode.bind(this)
     this.check = this.check.bind(this)
     this.handleVideo = this.handleVideo.bind(this)
     this.handleLoadStart = this.handleLoadStart.bind(this)

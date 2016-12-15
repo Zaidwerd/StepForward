@@ -19,34 +19,41 @@ export default class Admin extends Component {
     };
   }
 
+// change state from qr scan
   handleScan(data){
     this.setState({
       result: data,
     })
   }
+
+  // if there are errors in scan console log
   handleError(err){
     console.error(err)
   }
 
+// show qr scan modal
   adminQRShowModal(e) {
     // console.log("here")
     document.querySelector('#admin-qr').style.display = 'inline-block';
     document.querySelector('#admin-chat').style.display = 'none';
   }
 
+// hide qr scan modal
   adminQRHideModal(e) {
     // console.log("here")
     document.querySelector('#admin-qr').style.display = 'none';
     document.querySelector('#admin-chat').style.display = 'inline-block';
   }
 
+// change state of username input for fetch call
    handleUpdateSearch(e) {
     this.setState({
       searchUsername: e.target.value,
     });
-    console.log(e.target.value)
+     console.log(e.target.value)
   }
 
+// fetch call to db for volunteers
   handleInputSearch(e) {
     console.log("here");
     fetch(`/volunteer/${this.state.searchUsername}`)
@@ -64,6 +71,7 @@ export default class Admin extends Component {
       .catch(err => console.log('Error: ',err));
   }
 
+// fetch for scanned qr code
   handleScanSearch(e) {
     console.log("here");
     fetch(`/volunteer/${this.state.result}`)
@@ -81,11 +89,12 @@ export default class Admin extends Component {
       .catch(err => console.log('Error: ',err));
   }
 
-  AddVolunteer(){
-    this.setState({
 
-    })
-  }
+  // AddVolunteer(){
+  //   this.setState({
+
+  //   })
+  // }
 
   render() {
     const previewStyle = {

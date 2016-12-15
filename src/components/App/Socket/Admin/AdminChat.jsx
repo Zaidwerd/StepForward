@@ -3,10 +3,12 @@ import style from './AdminChat.css';
 
 // Code was help impliment with https://github.com/ga-diamonds-project3/project-3
 export default class VolunteerChat extends Component {
+  // checking to mount socket
   componentWillMount() {
     this.socket();
   }
 
+// socket function that creates ul and messages
   socket() {
     const socket = io();
     socket.on('chatroom', msg => {
@@ -18,6 +20,7 @@ export default class VolunteerChat extends Component {
     });
   }
 
+// submits changes to server
   handleSubmit(e) {
     e.preventDefault();
     const socket = io();
@@ -26,6 +29,7 @@ export default class VolunteerChat extends Component {
     i.value = '';
   }
 
+// handle change of state
   handleInputChange(e) {
     // console.log(e.target.value)
     this.setState({

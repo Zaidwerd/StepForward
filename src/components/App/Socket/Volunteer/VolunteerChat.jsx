@@ -7,6 +7,7 @@ export default class VolunteerChat extends Component {
     this.socket();
   }
 
+// socket function that creates ul and messages
   socket() {
     const socket = io();
     socket.on('chatroom', msg => {
@@ -18,6 +19,7 @@ export default class VolunteerChat extends Component {
     });
   }
 
+// submits changes to server
   handleSubmit(e) {
     e.preventDefault();
     const socket = io();
@@ -26,6 +28,7 @@ export default class VolunteerChat extends Component {
     i.value = '';
   }
 
+// handle change of state
   handleInputChange(e) {
     this.setState({
       msg: e.target.value,

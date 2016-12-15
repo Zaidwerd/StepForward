@@ -21,6 +21,8 @@ export default class AdminRegister extends Component {
 
 // ADMIN SIGN UP PAGE
 
+// change states for form post
+
   updateAdminUsername(e) {
     this.setState({
       form_admin_username: e.target.value,

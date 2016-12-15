@@ -1,51 +1,53 @@
 import React, { Component } from 'react';
 import '../Admin.css';
 
+// search component not used
+
 export default class List extends Component {
-  constructor() {
-    super();
+  // constructor() {
+  //   super();
 
-    this.state = {
-      searchUsername: '',
-      volunteer: {
-        volunteer_first_name: '',
-        volunteer_last_name: '',
-        volunteer_phone: '',
-        volunteer_email: '',
-      },
-      volunteer_list: [],
-    };
-  }
+  //   this.state = {
+  //     searchUsername: '',
+  //     volunteer: {
+  //       volunteer_first_name: '',
+  //       volunteer_last_name: '',
+  //       volunteer_phone: '',
+  //       volunteer_email: '',
+  //     },
+  //     volunteer_list: [],
+  //   };
+  // }
 
-  handleUpdateSearch(e) {
-    this.setState({
-      searchUsername: e.target.value,
-    });
-    console.log(e.target.value)
-  }
+  // handleUpdateSearch(e) {
+  //   this.setState({
+  //     searchUsername: e.target.value,
+  //   });
+  //   console.log(e.target.value)
+  // }
 
-  handleVolunteerSearch(e) {
-    console.log("here");
-    fetch(`/volunteer/${this.state.searchUsername}`)
-      .then(r => r.json())
-      .then((x) => {
-        this.setState({
-          volunteer: {
-            volunteer_first_name: x.first_name,
-            volunteer_last_name: x.last_name,
-            volunteer_phone: x.phone,
-            volunteer_email: x.email,
-          }
-        });
-      })
-      .catch(err => console.log('Error: ',err));
-  }
+  // handleVolunteerSearch(e) {
+  //   console.log("here");
+  //   fetch(`/volunteer/${this.state.searchUsername}`)
+  //     .then(r => r.json())
+  //     .then((x) => {
+  //       this.setState({
+  //         volunteer: {
+  //           volunteer_first_name: x.first_name,
+  //           volunteer_last_name: x.last_name,
+  //           volunteer_phone: x.phone,
+  //           volunteer_email: x.email,
+  //         }
+  //       });
+  //     })
+  //     .catch(err => console.log('Error: ',err));
+  // }
 
-  AddVolunteer(){
-    this.setState({
+  // AddVolunteer(){
+  //   this.setState({
 
-    })
-  }
+  //   })
+  // }
 
   render() {
     return (
