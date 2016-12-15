@@ -4,13 +4,13 @@ import style from './VolunteerChat.css';
 // Code was help impliment with https://github.com/ga-diamonds-project3/project-3
 export default class VolunteerChat extends Component {
   componentWillMount() {
-    this.socketFn();
+    this.socket();
   }
 
-  socketFn() {
+  socket() {
     const socket = io();
     socket.on('chatroom', msg => {
-      console.log('data on frontend', msg);
+      // console.log('data on frontend', msg);
       const ul = document.getElementById('volunteer-message');
       const li = document.createElement('li');
       li.innerHTML = msg.msg;

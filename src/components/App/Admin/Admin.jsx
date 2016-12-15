@@ -91,7 +91,7 @@ export default class Admin extends Component {
     const previewStyle = {
       height: 240,
       width: 320,
-    }
+    };
 
     return (
       <div className="test">
@@ -129,7 +129,7 @@ export default class Admin extends Component {
           <QR
             previewStyle={previewStyle}
             handleError={this.handleError}
-            handleScan={this.handleScan.bind(this)}
+            handleScan={(data) => this.handleScan(data)}
             hideQR={event => this.adminQRHideModal(event)}
           />
           <p>Volunteer: {this.state.result}</p>
